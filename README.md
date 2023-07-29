@@ -1,3 +1,4 @@
+[![Java CI with Maven](https://github.com/Pera-Swarm/java-robot/actions/workflows/java-ci.yml/badge.svg)](https://github.com/Pera-Swarm/java-robot/actions/workflows/java-ci.yml)
 
 # Java Robot 
 
