@@ -11,8 +11,8 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Pera-Swarm/java-robot</url>
+            <name>GitHub Pera-Swarm Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Pera-Swarm/robot-library-java</url>
         </repository>
     </distributionManagement>
 
