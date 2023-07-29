@@ -1,5 +1,5 @@
 
-# java-swarm-node
+# Java Robot 
 
 This is a boilerplate template for java virtual robotst, *Pera-Swarm*
 
@@ -21,4 +21,19 @@ port=1883
 username=user
 password=pass
 channel="v1"
+```
+
+## Install the Library
+
+<!-- - You need to setup a GitHub Token with the scope of `read:packages` and save it along with your GitHub UserName as environment variables as follows:
+
+```bash
+export USER_NAME="NuwanJ"
+export ACCESS_TOKEN="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"
+``` -->
+
+- Run the following command to run the `mvn install`
+
+```bash 
+mvn -s ./settings.xml -B install --file pom.xml 
 ```
