@@ -26,12 +26,14 @@ channel="v1"
 
 ## Install the Library
 
-<!-- - You need to setup a GitHub Token with the scope of `read:packages` and save it along with your GitHub UserName as environment variables as follows:
+- You need to setup a GitHub Token with the scope of `read:packages` and save it along with your GitHub UserName as environment variables as follows:
 
-```bash
-export USER_NAME="NuwanJ"
-export ACCESS_TOKEN="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"
-``` -->
+```xml
+<server>
+    <username>{GITHUB_USERNAME}</username>
+    <password>{GITHUB_TOKEN}</password>
+</server>
+```
 
 - Run the following command to run the `mvn install`
 
