@@ -1,4 +1,4 @@
-package robotImplementations;
+package Robots;
 
 import swarm.robot.VirtualRobot;
 
@@ -9,7 +9,7 @@ public class MyTestRobot extends VirtualRobot {
     }
 
     public void setup() {
-        System.out.println("My Test Robot Started");
+        System.out.println("My Test Robot");
         super.setup();
     }
 
