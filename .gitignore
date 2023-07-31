@@ -24,9 +24,8 @@ hs_err_pid*
 
 /src/resources/config/mqtt.properties
 /.settings/
-
+/target
 .idea
 .target
-
-/target
 settings.xml
+.DS_Store
