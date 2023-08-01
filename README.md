@@ -2,7 +2,7 @@
 
 # Java Robot 
 
-This is a boilerplate template for java virtual robotst, *Pera-Swarm*
+This is a boilerplate template for java virtual robots, under *Pera-Swarm*
 
 More details will be updated soon.
 
