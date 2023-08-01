@@ -40,3 +40,17 @@ channel="v1"
 ```bash 
 mvn -s ./settings.xml -B install --file pom.xml 
 ```
+
+## Run with commandline 
+
+- Compile the packages and assembly with all the dependencies, using `mvn compile assembly:single`
+
+```bash 
+mvn clean compile assembly:single -s settings.xml 
+```
+
+- Run the code implementation using `java -jar [jar_file_path] `
+
+```bash 
+java -jar target/java-robot-node-1.0-SNAPSHOT-jar-with-dependencies.jar 
+```
