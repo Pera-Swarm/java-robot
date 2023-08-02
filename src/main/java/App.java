@@ -1,13 +1,14 @@
 
 import swarm.configs.MQTTSettings;
-import swarm.robot.VirtualRobot;
-import Robots.*;
+import swarm.robot.Robot;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+import Robots.samples.SampleRobot;
 
 public class App {
 
@@ -31,8 +32,24 @@ public class App {
             MQTTSettings.channel = props.getProperty("channel", "v1");
             reader.close();
 
-            VirtualRobot robot = new MyTestRobot(10, -52, 32, 45);
+            // Start a single robot
+            Robot robot = new SampleRobot(10, 0, 0, 90);
             new Thread(robot).start();
+
+            // // Start a swarm of robots
+            // int[] robotList = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            // int startX = 0;
+            // int startY = 0;
+            // int startHeading = 90;
+
+            // Robot[] vr = new VirtualRobot[robotList.length];
+
+            // for (int i = 0; i < robotList.length; i++) {
+            // vr[i] = new SampleRobot(robotList[i], startX + 40 * i, startY + 50 * i,
+            // startHeading + 10 * i);
+            // new Thread(vr[i]).start();
+            // }
 
         } catch (FileNotFoundException ex) {
             // file does not exist

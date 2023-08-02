@@ -1,10 +1,10 @@
-package Robots;
+package Robots.samples;
 
 import swarm.robot.VirtualRobot;
 
-public class MyTestRobot extends VirtualRobot {
+public class SampleRobot extends VirtualRobot {
 
-    public MyTestRobot(int id, double x, double y, double heading) {
+    public SampleRobot(int id, double x, double y, double heading) {
         super(id, x, y, heading);
     }
 
@@ -17,8 +17,14 @@ public class MyTestRobot extends VirtualRobot {
         super.loop();
 
         if (state == robotState.RUN) {
-            System.out.println("Test");
-            delay(1000);
+            System.out.println("Run");
+
+        } else if (state == robotState.WAIT) {
+            System.out.println("Waiting");
+
+        } else if (state == robotState.BEGIN) {
+            System.out.println("Begin");
+
         }
     }
 

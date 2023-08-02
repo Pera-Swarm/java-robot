@@ -1,7 +1,7 @@
 // This robot will move freely, avoiding obstacles 
 // Written by Nuwan Jaliyagoda 
 
-package Robots;
+package Robots.samples;
 
 import swarm.robot.VirtualRobot;
 
