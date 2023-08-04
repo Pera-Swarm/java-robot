@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "App",
+            "name": "Run the Swarm",
             "request": "launch",
             "mainClass": "App",
             "projectName": "java-robot"
