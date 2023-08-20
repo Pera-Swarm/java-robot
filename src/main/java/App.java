@@ -1,4 +1,5 @@
 
+import Robots.samples.MazeFollowingRobot;
 import Robots.samples.ObstacleAvoidRobot;
 import swarm.configs.MQTTSettings;
 import swarm.robot.Robot;
@@ -34,7 +35,7 @@ public class App {
             reader.close();
 
             // Start a single robot
-            Robot robot = new ObstacleAvoidRobot(10, 9, 9, 90);
+            Robot robot = new MazeFollowingRobot(10, 9, 9, 90);
             new Thread(robot).start();
 
             // // Start a swarm of robots

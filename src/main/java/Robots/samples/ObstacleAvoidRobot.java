@@ -26,7 +26,7 @@ public class ObstacleAvoidRobot extends VirtualRobot {
         state = robotState.RUN;
         super.loop();
 
-        /*if (state == robotState.RUN) {
+        if (state == robotState.RUN) {
             double dist = distSensor.getDistance();
 
             if (dist < distanceThreshold) {
@@ -55,33 +55,9 @@ public class ObstacleAvoidRobot extends VirtualRobot {
             } else {
                 motion.move(defaultMoveSpeed, defaultMoveSpeed, 1000);
             }
-        }*/
-
-        if(state == robotState.RUN){
-            double dist = distSensor.getDistance();
-            System.out.println("dist  3 " +distSensor.getDistance());
-
-
-            if(dist<=10){
-                if(dist<=1){
-                    motion.rotateDegree((int) (defaultMoveSpeed * 0.75), 91);
-                    if(distSensor.getDistance()<=1){
-                        motion.rotateDegree((int) (defaultMoveSpeed * 0.75), -91);
-                        motion.rotateDegree((int) (defaultMoveSpeed * 0.75), -91);
-                        if(distSensor.getDistance()<=1){
-                            motion.rotateDegree((int) (defaultMoveSpeed * 0.75), -91);
-                        }
-                    }
-                }else{
-                    motion.move(defaultMoveSpeed, defaultMoveSpeed, 100);
-                }
-            }else{
-                motion.move(defaultMoveSpeed, defaultMoveSpeed, 1000);
-            }
-                //System.out.println("dist  1 " +distSensor.getDistance());
-                //motion.move(defaultMoveSpeed, defaultMoveSpeed, 100);
-                //System.out.println("dist  2 " +distSensor.getDistance());
-
         }
+
+
+
     }
 }

@@ -17,7 +17,6 @@ public class SampleRobot extends VirtualRobot {
         super.loop();
 
         if (state == robotState.RUN) {
-            motion.move(250,150);
             System.out.println("Run");
 
         } else if (state == robotState.WAIT) {
