@@ -23,7 +23,6 @@ public class ObstacleAvoidRobot extends VirtualRobot {
 
     @Override
     public void loop() throws Exception {
-        state = robotState.RUN;
         super.loop();
 
         if (state == robotState.RUN) {
@@ -56,8 +55,6 @@ public class ObstacleAvoidRobot extends VirtualRobot {
                 motion.move(defaultMoveSpeed, defaultMoveSpeed, 1000);
             }
         }
-
-
 
     }
 }

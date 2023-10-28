@@ -1,6 +1,4 @@
 
-import Robots.samples.MazeFollowingRobot;
-import Robots.samples.ObstacleAvoidRobot;
 import swarm.configs.MQTTSettings;
 import swarm.robot.Robot;
 
@@ -10,6 +8,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import Robots.samples.MazeFollowingRobot;
+import Robots.samples.ObstacleAvoidRobot;
 import Robots.samples.SampleRobot;
 
 public class App {
