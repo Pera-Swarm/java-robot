@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import Robots.samples.MazeFollowingRobot;
+import Robots.samples.ObstacleAvoidRobot;
 import Robots.samples.SampleRobot;
 
 public class App {
@@ -33,7 +35,7 @@ public class App {
             reader.close();
 
             // Start a single robot
-            Robot robot = new SampleRobot(10, 0, 0, 90);
+            Robot robot = new MazeFollowingRobot(10, 9, 9, 90);
             new Thread(robot).start();
 
             // // Start a swarm of robots

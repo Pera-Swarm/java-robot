@@ -55,5 +55,6 @@ public class ObstacleAvoidRobot extends VirtualRobot {
                 motion.move(defaultMoveSpeed, defaultMoveSpeed, 1000);
             }
         }
+
     }
 }
