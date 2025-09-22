@@ -1,16 +1,14 @@
 
-import swarm.configs.MQTTSettings;
-import swarm.robot.Robot;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import Robots.samples.MazeFollowingRobot;
-import Robots.samples.ObstacleAvoidRobot;
-import Robots.samples.SampleRobot;
+import Robots.samples.ColorRippleRobot;
+import swarm.configs.MQTTSettings;
+import swarm.robot.Robot;
+import swarm.robot.VirtualRobot;
 
 public class App {
 
@@ -34,24 +32,31 @@ public class App {
             MQTTSettings.channel = props.getProperty("channel", "v1");
             reader.close();
 
-            // Start a single robot
-            Robot robot = new MazeFollowingRobot(10, 9, 9, 90);
-            new Thread(robot).start();
-
             // // Start a swarm of robots
-            // int[] robotList = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] robotList = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Robot[] vr = new VirtualRobot[robotList.length];
 
-            // int startX = 0;
-            // int startY = 0;
-            // int startHeading = 90;
+            int x, y, robotHeading;
+            int startAngle = 0;
+            int deltaAngle = 360 / 10;
+            int radius = 50;
+            int headingOffset = 0;
 
-            // Robot[] vr = new VirtualRobot[robotList.length];
+            for (int i = 0; i < robotList.length; i++) {
+                double a = (startAngle + i * deltaAngle);
+                x = (int) (radius * Math.cos(a * Math.PI / 180));
+                y = (int) (radius * Math.sin(a * Math.PI / 180));
+                robotHeading = (int) (a + headingOffset);
 
-            // for (int i = 0; i < robotList.length; i++) {
-            // vr[i] = new SampleRobot(robotList[i], startX + 40 * i, startY + 50 * i,
-            // startHeading + 10 * i);
-            // new Thread(vr[i]).start();
-            // }
+                if (i == 0 || i == 1 || i == 2 || i == 3 | i == 4) {
+                    // These are physical robots
+                    System.out.println(i + "> x:" + x + " y:" + y + " heading:" + robotHeading);
+                } else {
+                    // These are virtual robots
+                    vr[i] = new ColorRippleRobot(robotList[i], x, y, robotHeading);
+                    new Thread(vr[i]).start();
+                }
+            }
 
         } catch (FileNotFoundException ex) {
             // file does not exist
