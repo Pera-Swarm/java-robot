@@ -29,3 +29,5 @@ hs_err_pid*
 .target
 settings.xml
 .DS_Store
+
+!builds/*.jar
